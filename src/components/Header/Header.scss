@@ -1,0 +1,14 @@
+.Header {
+  &__nav {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    padding: 10px;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

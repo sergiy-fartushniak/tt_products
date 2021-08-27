@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { NewCommentForm } from '../NewCommentForm';
 import { Loader } from '../Loader';
 import './ProductDetails.scss';
 
@@ -70,19 +69,30 @@ export const ProductDetails = ({ products, selectedProductId }) => {
             )}
           </section>
 
-          <section>
+          {/* <section>
             <div className="ProductDetails__form-wrapper">
               <NewCommentForm
                 selectedProductId={selectedProductId}
                 setComments={setComments}
               />
             </div>
-          </section>
+          </section> */}
         </div>
       )
   );
 };
 
-// ProductDetails.propTypes = {
-//   selectedPostId: PropTypes.number.isRequired,
-// };
+ProductDetails.propTypes = {
+  selectedProductId: PropTypes.number.isRequired,
+  products: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    weight: PropTypes.string.isRequired,
+    size: PropTypes.shape({
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired,
+    }).isRequired,
+    count: PropTypes.number.isRequired,
+  })).isRequired,
+};

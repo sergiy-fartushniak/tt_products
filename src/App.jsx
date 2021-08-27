@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 import './styles/general.scss';
 
 import productsFromServer from './api/products.json';
 import { ProductsList } from './components/ProductsList';
 import { ProductDetails } from './components/ProductDetails';
+import { Header } from './components/Header';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -14,62 +16,38 @@ const App = () => {
     setProducts(productsFromServer.products);
   }, []);
 
-  const sortByName = () => {
-    const sortedByName = [...products].sort(
-      (prev, current) => prev.name.localeCompare(current.name),
-    );
-
-    setProducts(sortedByName);
-  };
-
-  const sortByAmount = () => {
-    const sortedByAmount = [...products].sort(
-      (prev, current) => prev.count - current.count,
-    );
-
-    setProducts(sortedByAmount);
-  };
-
   return (
     <div className="App">
-      <header className="App__header">
-        <button
-          type="button"
-          onClick={sortByName}
-          className="button"
-        >
-          Sort by name
-        </button>
-        <button
-          type="button"
-          onClick={sortByAmount}
-          className="button"
-        >
-          Sort by amount
-        </button>
-      </header>
+      <Header />
+      <Switch>
 
-      <main className="App__main">
-        <div className="App__sidebar">
-          <ProductsList
-            products={products}
-            selectedProductId={selectedProductId}
-            setSelectedProductId={setSelectedProductId}
-          />
-        </div>
-
-        <div className="App__content">
-          {selectedProductId
-            ? (
-              <ProductDetails
+        <main className="App__main">
+          <Route path="/" exact>
+            <div className="App__sidebar">
+              <ProductsList
                 products={products}
+                setProducts={setProducts}
                 selectedProductId={selectedProductId}
+                setSelectedProductId={setSelectedProductId}
               />
-            ) : (
-              <h2>Please choose product</h2>
-            )}
-        </div>
-      </main>
+            </div>
+          </Route>
+
+          <Route path="/details">
+            <div className="App__content">
+              {selectedProductId
+                ? (
+                  <ProductDetails
+                    products={products}
+                    selectedProductId={selectedProductId}
+                  />
+                ) : (
+                  <h2>Please choose product</h2>
+                )}
+            </div>
+          </Route>
+        </main>
+      </Switch>
     </div>
   );
 };
