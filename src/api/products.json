@@ -1,0 +1,144 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "imageUrl": "https://freepngimg.com/thumb/apple/88-png-apple-image-clipart-transparent-png-apple-thumb.png",
+      "name": "Apple",
+      "count": 3,
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "100g"
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://freepngimg.com/thumb/pineapple/11-pineapple-png-image-download-thumb.png",
+      "name": "Pineapple",
+      "count": 1,
+      "size": {
+        "width": 500,
+        "height": 500
+      },
+      "weight": "800g"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://freepngimg.com/thumb/categories/1036.png",
+      "name": "Lemon",
+      "count": 6,
+      "size": {
+        "width": 200,
+        "height": 100
+      },
+      "weight": "80g"
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://freepngimg.com/thumb/orange/8-2-orange-png-clipart-thumb.png",
+      "name": "Orange",
+      "count": 6,
+      "size": {
+        "width": 100,
+        "height": 200
+      },
+      "weight": "100g"
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://freepngimg.com/thumb/pear/6-2-pear-transparent-thumb.png",
+      "name": "Pear",
+      "count": 4,
+      "size": {
+        "width": 150,
+        "height": 150
+      },
+      "weight": "150g"
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://freepngimg.com/thumb/peach/1-2-peach-png-hd-thumb.png",
+      "name": "Peach",
+      "count": 3,
+      "size": {
+        "width": 80,
+        "height": 110
+      },
+      "weight": "80g"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "productId": 1,
+      "description": "this is apple",
+      "date": "14:30 22.08.2021"
+    },
+    {
+      "id": 2,
+      "productId": 3,
+      "description": "this is lemon",
+      "date": "14:20 22.08.2021"
+    },
+    {
+      "id": 3,
+      "productId": 3,
+      "description": "this is lemon1",
+      "date": "14:00 22.08.2021"
+    },
+    {
+      "id": 4,
+      "productId": 2,
+      "description": "some text pineapple",
+      "date": "11:00 22.08.2021"
+    },
+    {
+      "id": 5,
+      "productId": 1,
+      "description": "some text apple1",
+      "date": "12:00 22.08.2021"
+    },
+    {
+      "id": 6,
+      "productId": 2,
+      "description": "some text pineapple1",
+      "date": "14:00 21.08.2021"
+    },
+    {
+      "id": 7,
+      "productId": 4,
+      "description": "some text orange",
+      "date": "14:00 20.08.2021"
+    },
+    {
+      "id": 8,
+      "productId": 5,
+      "description": "some text pear",
+      "date": "14:00 23.08.2021"
+    },
+    {
+      "id": 9,
+      "productId": 5,
+      "description": "some text pear1",
+      "date": "19:00 22.08.2021"
+    },
+    {
+      "id": 10,
+      "productId": 6,
+      "description": "some text preach",
+      "date": "18:00 21.08.2021"
+    },
+    {
+      "id": 11,
+      "productId": 5,
+      "description": "some text pear2",
+      "date": "14:45 23.08.2021"
+    },
+    {
+      "id": 12,
+      "productId": 4,
+      "description": "some text orange1",
+      "date": "11:20 20.08.2021"
+    }
+  ]
+}
