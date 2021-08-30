@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Loader } from '../Loader';
 import './ProductDetails.scss';
 
-import commentsFromServer from '../../api/products.json';
+import { getComments } from '../../api/products';
 
 export const ProductDetails = ({ products, selectedProductId }) => {
   const [product, setProduct] = useState(null);
@@ -11,10 +11,11 @@ export const ProductDetails = ({ products, selectedProductId }) => {
   const [commentsVisible, setCommentsVisible] = useState(true);
 
   useEffect(() => {
-    setComments(commentsFromServer.comments.filter(
-      comment => comment.productId === selectedProductId,
-    ));
+    const addComments = async() => setComments(
+      await getComments(selectedProductId),
+    );
 
+    addComments();
     setProduct(products[selectedProductId - 1]);
   }, [selectedProductId]);
 

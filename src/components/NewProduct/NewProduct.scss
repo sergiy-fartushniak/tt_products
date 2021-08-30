@@ -1,0 +1,36 @@
+.NewProduct {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__window {
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-label {
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

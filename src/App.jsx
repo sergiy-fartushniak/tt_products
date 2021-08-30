@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 import './styles/general.scss';
 
-import productsFromServer from './api/products.json';
+import { getProducts } from './api/products';
 import { ProductsList } from './components/ProductsList';
 import { ProductDetails } from './components/ProductDetails';
 import { Header } from './components/Header';
@@ -13,7 +13,9 @@ const App = () => {
   const [selectedProductId, setSelectedProductId] = useState(0);
 
   useEffect(() => {
-    setProducts(productsFromServer.products);
+    const addProducts = async() => setProducts(await getProducts());
+
+    addProducts();
   }, []);
 
   return (

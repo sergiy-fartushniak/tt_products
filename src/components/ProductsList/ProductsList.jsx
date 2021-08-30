@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ProductsList.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { NewProduct } from '../NewProduct/NewProduct';
 
 export const ProductsList = ({
   products,
@@ -9,6 +10,8 @@ export const ProductsList = ({
   selectedProductId,
   setSelectedProductId,
 }) => {
+
+  const [modal, setModal] = useState(false);
 
   const sortByName = () => {
     const sortedByName = [...products].sort(
@@ -24,6 +27,10 @@ export const ProductsList = ({
     );
 
     setProducts(sortedByAmount);
+  };
+
+  const showModal = () => {
+    setModal(!modal);
   };
 
   return (
@@ -43,6 +50,14 @@ export const ProductsList = ({
         >
           Sort by amount
         </button>
+        <button
+          type="button"
+          onClick={showModal}
+          className="ProductsList__button button"
+        >
+          New Product
+        </button>
+        <NewProduct showModal={showModal} modal={modal} />
       </header>
       <div className="ProductsList">
         <h2>Products:</h2>
@@ -71,7 +86,7 @@ export const ProductsList = ({
                     Close
                   </button>
                 ) : (
-                  <Link to="/details">
+                  <NavLink to="/details">
                     <button
                       type="button"
                       className="ProductsList__button button"
@@ -79,7 +94,7 @@ export const ProductsList = ({
                     >
                       Details
                     </button>
-                  </Link>
+                  </NavLink>
                 )}
             </li>
           ))}
